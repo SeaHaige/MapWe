@@ -2,27 +2,30 @@
 var child_process=require('child_process');
 var http = require('http');
 const net = require('net');
+const ini = require('ini');
 var fs = require('fs');
-
-let hk_send_device_id="34020000001220000005";
+ 
 var websocketlist=[];
 var listensessionlist=[];
 var saveconfig=null;
 
-var localmap=[
-];
+var localmap=[];
 try{
 saveconfig=fs.readFileSync("save.json");
 }catch(err){}
 if(saveconfig==null) saveconfig={localmap:[]}
 else saveconfig=JSON.parse(saveconfig)
 
+const config = ini.parse(fs.readFileSync('config.ini', 'utf-8'));
+
+console.log("MapWeServer start listen port "+config.MapWeServer.port+".");
+
 localmap=saveconfig.localmap;
 for(var obj of localmap) obj.remoteport=0;
 
 var devicesession=[]
 var WebSocketServer = require('ws').Server,
-wss = new WebSocketServer({ port: 8109 });
+wss = new WebSocketServer({ port: config.MapWeServer.port });
 wss.on('connection', function (ws) {
 	ws.deviceid='';
 	ws.requiremap=0; 
