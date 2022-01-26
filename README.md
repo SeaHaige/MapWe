@@ -11,7 +11,7 @@ MapWe是一款内网端口映射软件，用于在点对点之间建立安全通
 
 npm install 
 
-服务器配置文件
+服务器配置文件(config.ini)
 
 [MapWeServer]
 #MapWe服务端口
@@ -20,7 +20,7 @@ port=8109
 运行
 node app.js 
 
-客户端1（服务方）
+客户端1（服务方）(配置文件config.ini)
 
 [MapWeClient]
 #服务器IP和端口
@@ -33,7 +33,7 @@ serviceport=22,3306
 运行
 node client.js
 
-客户端2（连接方）
+客户端2（连接方）(配置文件config.ini)
 
 [MapWeClient]
 #服务器IP和端口
