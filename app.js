@@ -95,7 +95,7 @@ wss.on('connection', function (ws) {
   ws.on('message', function (message,isbin) {
     if(!isbin) {
 		message=message.toString();
-		if( message.length==24 && message.substring(0,4)=='log:'){
+		if( message.substring(0,4)=='log:'){
 			ws.deviceid=message.substring(4);
 			let findf=0;
 			for(const sock of websocketlist){
