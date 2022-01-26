@@ -33,6 +33,7 @@ serviceport=22,3306
 运行
 node client.js
 
+
 客户端2（连接方）(配置文件config.ini)
 
 [MapWeClient]
