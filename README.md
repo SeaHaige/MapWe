@@ -14,7 +14,9 @@ npm install
 服务器配置文件(config.ini)
 
 [MapWeServer]
+
 #MapWe服务端口
+
 port=8109
 
 运行
@@ -23,11 +25,17 @@ node app.js
 客户端1（服务方）(配置文件config.ini)
 
 [MapWeClient]
+
 #服务器IP和端口
+
 host=192.168.0.165:8109
+
 #定义设备ID
+
 id=1220000006
+
 #指明提供服务的端口
+
 serviceport=22,3306
 
 运行
@@ -37,13 +45,19 @@ node client.js
 客户端2（连接方）(配置文件config.ini)
 
 [MapWeClient]
+
 #服务器IP和端口
+
 host=192.168.0.165:8109
+
 #定义设备ID
+
 id=1220000001
 
 #将设备1220000006的服务端口(22,3306)映射到本机50000开始的端口
+
 localport=50000
+
 mapping=1220000006
 
 运行
