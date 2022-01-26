@@ -1,7 +1,4 @@
 
-//./yolov5 -d yolov5s.engine ../samples
-//pptpsetup --create --server 60.205.224.130 --username vpn002 --password Hnbd@2021 --encrypt --start
-//
 var ws = require("ws");
 const net = require('net');
 const ini = require('ini');
